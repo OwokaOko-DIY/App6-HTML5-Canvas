@@ -20,7 +20,7 @@ Brief Description of Goal of Code:
 The goal of this code is to add a canvas to a site that allows for multiple functions. With this code, users of the website will be able to draw, load images, etc.
  
 Known Issues:
-None as of now.
+After adding other codes, rectangle fucntion is no longer working and no other button functions are working.
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
@@ -74,6 +74,7 @@ console.log("This file last modified " + docMod); // generates message in javaSc
 <button onclick="drawRectangle()">Draw Rectangle</button>
 <button onclick="drawText()">Draw My Name</button>
 <button onclick="drawImage()">Load Image</button>
+<button onclick="clearCanvas()">Clear Canvas</button>
 	
 <script>
 function draw_b() {
@@ -106,6 +107,12 @@ function drawImage() {
   context.drawImage(img, 50, 50);
 	  img.src = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.smithsonianmag.com%2Farts-culture%2Fthe-woman-who-brought-van-gogh-to-the-world-66805589%2F&psig=AOvVaw3R7SP0IOlvkAdn5lDXEnCW&ust=1713222915075000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIDD8u3qwoUDFQAAAAAdAAAAABAE"
             };
+
+function clearCanvas() {
+            var canvas = document.getElementById("myCanvas");
+            var context = canvas.getContext("2d");
+            context.clearRect(0, 0, canvas.width, canvas.height);
+        }
 </script>	
 	
 <div id="content" class="w3-container">
