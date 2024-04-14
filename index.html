@@ -72,6 +72,8 @@ console.log("This file last modified " + docMod); // generates message in javaSc
 </div>
 
 <button onclick="drawRectangle()">Draw Rectangle</button>
+<button onclick="drawText()">Draw My Name</button>
+<button onclick="drawImage()">Load Image</button>
 	
 <script>
 function draw_b() {
@@ -86,7 +88,24 @@ function drawRectangle() {
    var context = canvas.getContext("2d");
    context.fillStyle = "#FF0000";
   context.fillRect(50, 50, 100, 80);
+ }
+
+ function drawText() {
+            var canvas = document.getElementById("myCanvas");
+            var context = canvas.getContext("2d");
+            context.font = "30px Arial";
+            context.fillStyle = "#000";
+            context.fillText("Your Name", 50, 200);
         }
+
+function drawImage() {
+  var canvas = document.getElementById("myCanvas");
+  var context = canvas.getContext("2d");
+  var img = new Image();
+  img.onload = function() {
+  context.drawImage(img, 50, 50);
+	  img.src = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.smithsonianmag.com%2Farts-culture%2Fthe-woman-who-brought-van-gogh-to-the-world-66805589%2F&psig=AOvVaw3R7SP0IOlvkAdn5lDXEnCW&ust=1713222915075000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIDD8u3qwoUDFQAAAAAdAAAAABAE"
+            };
 </script>	
 	
 <div id="content" class="w3-container">
