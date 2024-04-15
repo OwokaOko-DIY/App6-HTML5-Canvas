@@ -1,5 +1,7 @@
 <!DOCTYPE html> 
 <html> 
+
+<!--Introduction and disclaimer to code-->
 <!-- The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only.  Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.
  
 THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
@@ -15,16 +17,18 @@ http://cns.utexas.edu/fri
 Research Educator:
 Timothy Riedel
 triedel@utexas.edu
- 
+
+
 Brief Description of Goal of Code:
 The goal of this code is to add a canvas to a site that allows for multiple functions. With this code, users of the website will be able to draw, load images, etc.
  
 Known Issues:
-After adding other codes, rectangle fucntion is no longer working and no other button functions are working.
+Issues have been fixed. No known issues as of now.
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
-	
+
+<!--meta section detailing important information such as how the app will be displayed and which devices are capable of opening it-->
    <head> 
       <title>App6---HTML5-Canvas</title>  
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,15 +37,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
       <link rel="stylesheet" href="w3-colors-flat.css">
    </head> 
 
-
 <script>
+//Javacript code detailing timestamp for time of last modification; helps with Github delay time
 var docMod = document.lastModified; // loads last modified time stamp into docMod variable
 alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
 console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 
 </script>
 
-
-
+/*Beginning of CSS Code styling the site and providing proper margins*/
 <style>	
 .body {
      margin: 0em;
@@ -56,27 +59,34 @@ console.log("This file last modified " + docMod); // generates message in javaSc
     z-index: 0;
     background-color: hsl(0,0%,100%);
 }
+/* Code detailing the page display details*/
   .page:target {
     left: 0vw;
     z-index: 1;
 }
 </style>
 
+<!-- HTML section-->
 <body>
+<!--Code for Header of Website-->
 <div id="header" class="w3-container w3-flat-carrot">
 	<h1>App6---HTML5-Canvas</h1>
 </div>
 
 <div id="content" class="w3-container">
+<!-- Code for Canvas including sizing and border on page-->
 	<p><canvas id="myCanvas" width="300" height="225" style="border:1px solid #000;"></canvas></p>
 </div>
-
+	
+<!-- Code for each four buttons including draw rectangle, draw name, draw image, and load canvas-->
 <button onclick="drawRectangle()">Draw Rectangle</button>
 <button onclick="drawText()">Draw My Name</button>
 <button onclick="drawImage()">Load Image</button>
 <button onclick="clearCanvas()">Clear Canvas</button>
-	
+
+//Javascript code for website functions
 <script>
+//Function to create or draw canvas with correct proportions
 function draw_b() {
   var b_canvas = document.getElementById("a");
   var b_context = b_canvas.getContext("2d");
@@ -84,6 +94,7 @@ function draw_b() {
 }
 draw_b()
 
+//Function to draw rectangle in canvas	
 function drawRectangle() {
    var canvas = document.getElementById("myCanvas");
    var context = canvas.getContext("2d");
@@ -91,6 +102,7 @@ function drawRectangle() {
   context.fillRect(50, 50, 100, 80);
  }
 
+//Function to draw my name in canvas
  function drawText() {
             var canvas = document.getElementById("myCanvas");
             var context = canvas.getContext("2d");
@@ -99,6 +111,7 @@ function drawRectangle() {
             context.fillText("Owoka Oko", 50, 200);
         }
 
+//Function to load image inside canvas with correct proportions
 function drawImage() {
   var canvas = document.getElementById("myCanvas");
   var context = canvas.getContext("2d");
@@ -109,16 +122,18 @@ function drawImage() {
 	  img.src = "https://th-thumbnailer.cdn-si-edu.com/tdePzwfnlnZjzpndAxILYAcUs7g=/800x800/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/Vincent-van-Gogh-Doctor-Gachet-631.jpg"
  }
 
+//Function to completely clear canvas of other functions
 function clearCanvas() {
             var canvas = document.getElementById("myCanvas");
             var context = canvas.getContext("2d");
             context.clearRect(0, 0, canvas.width, canvas.height);
         }
 </script>	
-		
+
+<!--Disclaimer that shows on website-->
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
-
+<!--Footer shown on website-->
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
 </footer>
